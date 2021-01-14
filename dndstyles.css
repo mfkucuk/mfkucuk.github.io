@@ -1,0 +1,45 @@
+body  {
+	font-family: 'Redressed', cursive;
+	font-size: 25px;
+	padding-left: 30px;
+}
+
+#welcomePage {
+	text-align: center;
+}
+
+#welcomePage p {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+button {
+	font-family: 'Redressed', cursive;
+	border-radius: 15px;	
+	font-size: 25px;	
+	cursor: pointer;
+	background-color: #FFD586;
+	height: 50px;
+	outline: none;
+	width: 150px;	
+}
+
+button:hover {
+	background-color: #FFC558;
+}
+
+button:active {
+	background-color: #FFE5B4;
+}
+
+input {
+	background-color: #FFE5B4;
+}
+
