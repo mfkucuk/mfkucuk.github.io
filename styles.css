@@ -1,0 +1,77 @@
+body {
+	background-color: rgb(176, 21, 153);
+}
+
+#div1 {
+	width: 20%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(250, 166, 34);
+	float: left;
+}
+
+#div2 {
+	width: 20%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(255, 229, 44);
+	float: left;
+}
+
+#div3 {
+	width: 20%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(127, 230, 239);
+	float: left;
+}
+
+#div4 {
+	width: 20%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(196, 215, 12);
+	float: left;
+}
+
+#div5 {
+	width: 20%;
+	height: 2000px;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(194, 35, 3);
+	float: left;
+}
+
+p {
+	text-align: center;
+	margin: 5px;
+}
+
+h1 {
+	text-align: center;
+	background-repeat: no-repeat;
+	color: #F6F;
+	padding: 16px;
+}
+
+td {
+	text-align: center;
+	color: #EEE;
+}
+
+#skills {
+	
+}
+
+#logos {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: center;
+	list-style-type: none;
+}

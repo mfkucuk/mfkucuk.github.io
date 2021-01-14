@@ -1,0 +1,14 @@
+body {
+	background-color: #FF6;
+}
+
+#myCanvas {
+	padding: 0;
+    margin: auto;
+    display: block;
+	background-color: #AAA;
+}
+
+p {
+	text-align: center;
+}

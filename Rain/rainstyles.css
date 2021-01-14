@@ -1,0 +1,44 @@
+canvas {
+	background-color: #EEE;
+	display: block;
+	padding: 0;
+	margin: auto;
+}
+
+audio {
+	margin: auto;
+	padding: 0;
+	display: block;
+	outline: none;
+}
+
+h1, p {
+	text-align: center;
+}
+
+body {
+	background-color: lightblue;
+	margin: auto;
+	display: block;
+	text-align: center;
+}
+
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked {
+  	position: absolute;
+  	left: -9999%;
+}
+
+input[type="checkbox"] + label {
+  	display: inline-block;
+  	padding: 10px;
+  	cursor: pointer;
+  	color: black;
+  	background-color: white;
+  	margin: 0 auto;
+}
+
+input[type="checkbox"]:checked + label {
+  	color: white;
+  	background-color: #67B7D1;
+}
