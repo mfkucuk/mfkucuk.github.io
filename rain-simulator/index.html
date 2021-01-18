@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rain Simulator v1.2</title>
+
+	<link rel="stylesheet" type="text/css" href="rainstyles.css">
+</head>
+<body>
+	<h1>Rain Simulator v1.2</h1>
+
+	<canvas id="rain" width="1024" height="768"></canvas>
+
+	<br><br>
+
+
+	<input type="checkbox" name="rainButton" tabindex=1 id="0000">
+	<label for="0000">Rain</label>
+	<input type="checkbox" name="rainButton" tabindex=2 id="0001">
+	<label for="0001">Thunder</label>
+
+	<label for="soundRange">Rain Volume: </label>
+  	<input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider" id="soundRange" tabindex=3>
+
+	<audio id="rainSound" controls loop style="display: none;">
+		<source src="sounds/rainSound.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="thunderSound" controls loop style="display: none;">
+		<source src="sounds/thunderSound.mp3" type="audio/mpeg">
+	</audio>
+
+	<br><br><br>
+	<h2>Updates</h2>
+	<p>v1.1 is out: Added sounds. Speed and quantity of the raindrops change relatively to the volume.
+	Some bugs will be fixed on v1.2 :)</p>
+	<p>v1.2 is out: Added thunder with sound. Made the UI look better. Also some bug fixes.</p>
+
+	<script type="text/javascript" src="Codes/drops.js"></script>
+	<script type="text/javascript" src="Codes/setup.js"></script>
+</body>
+</html>
