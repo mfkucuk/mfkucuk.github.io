@@ -6,7 +6,8 @@ const femaleOrcNames = [];
 const maleHumanNames = [];
 const femaleHumanNames = [];
 const randomRace = ["Dragonborn", "Dwarf", "Gnome", "Hale-Elf", "Half-Orc", "Halfling", "High-Elf", "Human", "Thiefling", "Wood-Elf"];
-const randomBackground = ["Acolyte"];
+const randomBackground = ["Acolyte", "City Watch", "Criminal", "Entertainer", "Secret Agency", "Far Traveler", "Folk Hero", "Guild Artisan", "Hermit", "Noble", "Outlander",
+                    "Sailor", "Soldier", "Urban Bounty Hunter"];
 const randomClass = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin",  "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 const randomAlignment = ["Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "True Neutral", "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"];
 const randomSex = ["Male", "Female"];
@@ -21,10 +22,12 @@ function askForPlayerName() {
     pname = document.getElementById("playerName1").value;
 
     document.getElementById("playerName").style.display = "block";
+    generateRandomly();
 }
 
 // Randomly generate a character sheet
 function generateRandomly() {
+    
 	// Generate stats
 	str = generateStat();
     dex = generateStat();
@@ -53,7 +56,7 @@ function generateRandomly() {
     stCha = modCha;
 
     // Random age
-	age = Math.floor(Math.random() * 90 + 10);
+	age = Math.floor(Math.random() * 90 + 20);
 
     // Random sex
     sex = randomSex[Math.floor(Math.random() * randomSex.length)];
@@ -83,12 +86,42 @@ function generateRandomly() {
         }
         break;
 
+        case "Human":
+        if ( sex == "Male" ) {
+            cname = maleHumanNames[Math.floor(Math.random() * maleHumanNames.length)];
+        }
+        else {
+            cname = femaleHumanNames[Math.floor(Math.random() * femaleHumanNames.length)];
+        }
+        break;
+
     }
+
+    // Race bonus
+    var r = new Race(race);
+    r.raceBonus(r.val);
+
+    // Random background
+    background = randomBackground[Math.floor(Math.random() * randomBackground.length)];
+
+    // Background bonus
+    var b = new Background(background);
+    b.backgroundBonus(b.val);
 
     // Random class
     pclass = randomClass[Math.floor(Math.random() * randomClass.length)];
 
+    // Class bonus
+    var c = new Class(pclass);
+    c.classBonus(c.val);
+
     // Random alignment
     alignment = randomAlignment[Math.floor(Math.random() * randomAlignment.length)];
+
+
+    // Create sheet
+    fillOutSheet();
+    document.getElementById("playerName").style.display = "none";
+    document.getElementById("sheet").style.display = "block";
 
 }
