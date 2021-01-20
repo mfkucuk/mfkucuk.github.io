@@ -11,7 +11,7 @@ function generateName() {
     var fullName = "";
     var name = "";
     var surname = "";
-    var numberOfSyllabuls = Math.floor(Math.random() * 3 + 2);
+    var numberOfSyllabuls = Math.floor( Math.random() * 3 + 2);
     for ( let j = 0; j < numberOfSyllabuls; j++ ) {
         var pattern_1 = vowels[Math.floor(Math.random() * vowels.length)] + consonants[Math.floor(Math.random() * consonants.length)];
         var pattern_2 = consonants[Math.floor(Math.random() * consonants.length)] + vowels[Math.floor(Math.random() * vowels.length)];
