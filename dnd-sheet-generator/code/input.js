@@ -7,12 +7,19 @@ var cnameInput = document.getElementById("cname1");
 var sexes = document.getElementsByName("sex");
 var ageInput = document.getElementById("age1");
 var alignments = document.getElementsByName("align");
+var d1form = document.getElementsByName("d1");
+var d2form = document.getElementsByName("d2");
+var d3form = document.getElementsByName("d3");
+var d4form = document.getElementsByName("d4");
+var d5form = document.getElementsByName("d5");
+var d6form = document.getElementsByName("d6");
 
 
 // Constants
 const PROF = 2;
 
 // Variables
+var d1, d2, d3, d4, d5, d6;
 var str, dex, con, int, wis, cha;
 var modStr, modDex, modCon, modInt, modWis, modCha;
 var stStr, stDex, stCon, stInt, stWis, stCha;
@@ -22,7 +29,50 @@ var health;
 var gold = 0;
 var skillBonus, halfElfBonus;
 
+var statsToBeAssigned = new Set();
+
+// Generate stats
+d1 = generateStat();
+d2 = generateStat();
+d3 = generateStat();
+d4 = generateStat();
+d5 = generateStat();
+d6 = generateStat();
+
+document.getElementById("d1").innerHTML = d1 + ": ";
+document.getElementById("d2").innerHTML = d2 + ": ";
+document.getElementById("d3").innerHTML = d3 + ": ";
+document.getElementById("d4").innerHTML = d4 + ": ";
+document.getElementById("d5").innerHTML = d5 + ": ";
+document.getElementById("d6").innerHTML = d6 + ": ";
+
 // Functions
+function assignStat(form, value) {
+    for ( let i = 0; i < form.length; i++ ) {
+        if ( form[i].checked ) {
+            if ( form[i].value == "strength" ) {
+                str = value;
+            }
+            else if ( form[i].value == "dexterity" ) {
+                dex = value;
+            }
+            else if ( form[i].value == "constitution" ) {
+                con = value;
+            }
+            else if ( form[i].value == "intelligence" ) {
+                int = value;
+            }
+            else if ( form[i].value == "wisdom" ) {
+                wis = value;
+            }
+            else if ( form[i].value == "charisma" ) {
+                cha = value;
+            }
+            statsToBeAssigned.add(form[i].value);
+        }
+    }
+}
+
 function generateStat()
 {
     var sum = 0;
@@ -108,14 +158,19 @@ function Continue()
         }
     }
 
+    // Assign stats
+    assignStat(d1form, d1);
+    assignStat(d2form, d2);
+    assignStat(d3form, d3);
+    assignStat(d4form, d4);
+    assignStat(d5form, d5);
+    assignStat(d6form, d6);
 
-    // Generate stats
-    str = generateStat();
-    dex = generateStat();
-    con = generateStat();
-    int = generateStat();
-    wis = generateStat();
-    cha = generateStat();
+    if ( statsToBeAssigned.size != 6 ) {
+        alert("There's a problem with your stat assignment. Try again.");
+        statsToBeAssigned.clear();
+        return 0;
+    }
 
     // Compute modifiers
     modStr = findModifier(str);
@@ -187,27 +242,27 @@ function halfElfBonus()
         {
             if ( halfElfBonus[i].checked )
             {
-                if ( halfElfBonus[i] == "strength" )
+                if ( halfElfBonus[i].value == "strength" )
                 {
                     str++;
                 }
-                else if ( halfElfBonus[i] == "dexterity" )
+                else if ( halfElfBonus[i].value == "dexterity" )
                 {
                     dex++;
                 }
-                else if ( halfElfBonus[i] == "constitution" )
+                else if ( halfElfBonus[i].value == "constitution" )
                 {
                     con++;
                 }
-                else if ( halfElfBonus[i] == "intelligence" )
+                else if ( halfElfBonus[i].value == "intelligence" )
                 {
                     int++;
                 }
-                else if ( halfElfBonus[i] == "wisdom" )
+                else if ( halfElfBonus[i].value == "wisdom" )
                 {
                     wis++;
                 }
-                else if ( halfElfBonus[i] == "charisma" )
+                else if ( halfElfBonus[i].value == "charisma" )
                 {
                     cha++;
                 }

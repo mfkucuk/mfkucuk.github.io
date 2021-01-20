@@ -16,13 +16,20 @@
 
 	<div id="welcomePage">
 		<h1>DnD Sheet Generator</h1>
-		<h2>v2.0</h2>
-		<p>Choose your character's race, background, class etc. and let this program throw the dice and fill out the character sheet for you.</p>
+		<h2>v2.1</h2>
+		<p>Choose your character's race, background, class etc. and let this program throw the dice and fill out the character sheet for you. ...Or randomly generate
+		a character and a sheet.</p>
 
-		<button type="button" onclick="start()">Start manually</button>
+		<button type="button" onclick="start()">Create</button>
 		<button type="button" onclick="startRandomly()">Generate</button>
-		<br><br><br><br><br><br><br><br><br>
-		<p>by Feyyaz, Güvercin and Boz</p>
+		<br>
+		<br>
+		<br>
+		<div id="update">
+			<h3>Version 2.1 is out! What's New?</h3>
+			<p>- Minor bug fixes.</p>
+			<p>- Added a generate button which will randomize everything except the player name.</p>
+		</div>
 	</div>
 
 	<!-- Random Start -->
@@ -62,6 +69,103 @@
 		<form id="age">
 			<label for="age1">Age:</label>
 			<input type="text" name="age" id="age1" required><br><br>
+		</form>
+
+		<p><b>Assign your rolls to desired stats (Strength/Dexterity/etc.):</b></p>
+		<form>
+			<p id="d1"></p>
+			<input type="radio" id="hebonus1" name="d1" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d1" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d1" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d1" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d1" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d1" value="charisma">
+			<label for="hebonus1">Charisma</label><br>
+		</form>
+
+		<form>
+			<p id="d2"></p>
+			<input type="radio" id="hebonus1" name="d2" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d2" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d2" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d2" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d2" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d2" value="charisma">
+			<label for="hebonus1">Charisma</label><br>
+		</form>
+
+		<form>
+			<p id="d3"></p>
+			<input type="radio" id="hebonus1" name="d3" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d3" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d3" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d3" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d3" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d3" value="charisma">
+			<label for="hebonus1">Charisma</label><br>
+		</form>
+
+		<form>
+			<p id="d4"></p>
+			<input type="radio" id="hebonus1" name="d4" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d4" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d4" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d4" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d4" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d4" value="charisma">
+			<label for="hebonus1">Charisma</label><br>
+		</form>
+
+		<form>
+			<p id="d5"></p>
+			<input type="radio" id="hebonus1" name="d5" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d5" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d5" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d5" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d5" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d5" value="charisma">
+			<label for="hebonus1">Charisma</label><br>
+		</form>
+
+		<form>
+			<p id="d6"></p>
+			<input type="radio" id="hebonus1" name="d6" value="strength">
+			<label for="hebonus1">Strength</label>
+			<input type="radio" id="hebonus1" name="d6" value="dexterity">
+			<label for="hebonus1">Dexterity</label>
+			<input type="radio" id="hebonus1" name="d6" value="constitution">
+			<label for="hebonus1">Constitution</label>
+			<input type="radio" id="hebonus1" name="d6" value="intelligence">
+			<label for="hebonus1">Intelligence</label>
+			<input type="radio" id="hebonus1" name="d6" value="wisdom">
+			<label for="hebonus1">Wisdom</label>
+			<input type="radio" id="hebonus1" name="d6" value="charisma">
+			<label for="hebonus1">Charisma</label><br><br><br>
 		</form>
 
 		<p><b>Select your character's race:</b></p>
@@ -208,17 +312,17 @@
 
 		<p><b>Select your class bonuses:</b></p>
 		<form class="input" id="barbarian" style="display: none;">
-			<input type="checkbox" name="barb" id="barbchoice1" value="animalHandling">
+			<input type="checkbox" name="barbarian" id="barbchoice1" value="animalHandling">
 			<label for="barbchoice1">Animal Handling</label><br>
-			<input type="checkbox" name="barb" id="barbchoice2" value="athletics">
+			<input type="checkbox" name="barbarian" id="barbchoice2" value="athletics">
 			<label for="barbchoice2">Athletics</label><br>
-			<input type="checkbox" name="barb" id="barbchoice3" value="intimidation">
+			<input type="checkbox" name="barbarian" id="barbchoice3" value="intimidation">
 			<label for="barbchoice3">Intimidation</label><br>
-			<input type="checkbox" name="barb" id="barbchoice4" value="nature">
+			<input type="checkbox" name="barbarian" id="barbchoice4" value="nature">
 			<label for="barbchoice4">Nature</label><br>
-			<input type="checkbox" name="barb" id="barbchoice5" value="perception">
+			<input type="checkbox" name="barbarian" id="barbchoice5" value="perception">
 			<label for="barbchoice5">Perception</label><br>
-			<input type="checkbox" name="barb" id="barbchoice6" value="survival">
+			<input type="checkbox" name="barbarian" id="barbchoice6" value="survival">
 			<label for="barbchoice6">Survival</label><br><br>
 		</form>
 
@@ -383,17 +487,17 @@
 		</form>
 
 		<form class="input" id="sorcerer" style="display: none;">
-			<input type="checkbox" name="sorc" id="bardchoice3" value="arcana">
+			<input type="checkbox" name="sorcerer" id="bardchoice3" value="arcana">
 			<label for="bardchoice3">Arcana</label><br>
-			<input type="checkbox" name="sorc" id="barbchoice5" value="deception">
+			<input type="checkbox" name="sorcerer" id="barbchoice5" value="deception">
 			<label for="barbchoice5">Deception</label><br>
-			<input type="checkbox" name="sorc" id="barbchoice7" value="insight">
+			<input type="checkbox" name="sorcerer" id="barbchoice7" value="insight">
 			<label for="barbchoice7">Insight</label><br>
-			<input type="checkbox" name="sorc" id="bardchoice8" value="intimidation">
+			<input type="checkbox" name="sorcerer" id="bardchoice8" value="intimidation">
 			<label for="bardchoice8">Intimidation</label><br>
-			<input type="checkbox" name="sorc" id="bardchoice14" value="persuasion">
+			<input type="checkbox" name="sorcerer" id="bardchoice14" value="persuasion">
 			<label for="barbchoice14">Persuasion</label><br>
-			<input type="checkbox" name="sorc" id="bardchoice15" value="religion">
+			<input type="checkbox" name="sorcerer" id="bardchoice15" value="religion">
 			<label for="barbchoice15">Religion</label><br><br>
 		</form>
 
