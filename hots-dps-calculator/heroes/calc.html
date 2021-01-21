@@ -1,8 +1,14 @@
 <h1> {{hero.name}} </h1>
+<hr>
+<div>
+	<input type="range" name="level" ng-model="level" min="1" max="30">
+	<p>Level: {{level}}</p>
+	<br>
 
-<input type="range" name="level" ng-model="level" min="1" max="30">
-<p>Level: {{level}}</p>
+	<input type="number" name="enemyArmor" ng-model="enemyArmor" min="-75" max="75">
+	<p>Enemy Armor: {{enemyArmor}}</p>
 
-<button type="button" ng-click="calculateDps()">Calculate DPS</button>
+	<button type="button" ng-click="calculateDps()">Calculate DPS</button>
+</div>
 <hr>
 <h2>DPS: {{ dps }}</h2>
