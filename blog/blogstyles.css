@@ -1,0 +1,45 @@
+body {
+	background-color: rgb(51, 102, 153);
+}
+
+#container {
+	background-color: rgb(25, 51, 76);
+	width: 60%;
+	height: 100%;
+	margin: 10px auto 0;
+	padding: 20px;
+}
+
+#fixedMessage {
+	padding: 15px;
+	background-color: rgb(28, 28, 28);
+}
+
+.entryHeader {
+	margin: 30px;
+	font-size: 24px;
+}
+
+.entry {
+	margin: 30px;
+	padding: 10px;
+	background-color: rgb(28, 28, 28);
+}
+
+.entry img {
+	padding: 30px;
+	margin: 10px auto 0;
+	display: block;
+}
+
+p {
+	font-size: 20px;
+	margin: 10px;
+	color: rgb(204, 204, 204);
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	color: rgb(204, 204, 204);
+}
