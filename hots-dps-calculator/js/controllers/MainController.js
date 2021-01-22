@@ -1,5 +1,16 @@
 app.controller('listCtrl', function($scope) {
 	$scope.heroes = heroesData;
+	$scope.heroesNames = [];
+	
+	for ( let i = 0; i < heroesData.length; i++ ) {
+		$scope.heroesNames[i] = heroesData[i].name;
+	}
+
+	$scope.searchHero = "";
+
+	$scope.clear = function() {
+		$scope.searchHero = "";
+	}
 });
 
 app.controller('heroesCtrl', function($scope, $routeParams) {
