@@ -32,10 +32,10 @@
 		</div>
 
 		<h3>Report bugs or anything here:</h3>
-		<form action="process.php" method="get">
+		<form action="process.php" method="get" target="_blank">
 			E-mail: <input type="email" name="email">
 			<br><br>
-			Message: <input type="text" name="text">
+			Message: <textarea name="text"></textarea>
 			<br><br>
 
 			<input type="submit" name="submit">
