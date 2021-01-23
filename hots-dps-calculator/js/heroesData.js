@@ -84,7 +84,7 @@ const heroesData = [
 	{'name': 'Valeera', 'attackDamage': 82.0, 'attackSpeed': 2.0},
 	{'name': 'Valla', 'attackDamage': 78.0, 'attackSpeed': 1.67},
 	{'name': 'Varian', 'attackDamage': 77.0, 'attackSpeed': 1.25},
-	{'name': 'Whitmane', 'attackDamage': 64.5, 'attackSpeed': 1.0},
+	{'name': 'Whitemane', 'attackDamage': 64.5, 'attackSpeed': 1.0},
 	{'name': 'Xul', 'attackDamage': 98.8, 'attackSpeed': 1.21},
 	{'name': 'Yrel', 'attackDamage': 161.2, 'attackSpeed': 0.77},
 	{'name': 'Zagara', 'attackDamage': 88.4, 'attackSpeed': 1.25},
