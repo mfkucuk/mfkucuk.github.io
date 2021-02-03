@@ -69,9 +69,7 @@ const secondBox = {
 	},
 
 	set: function(value) {
-		console.log(this.mass);
 		this.mass = value;
-		console.log(this.mass);
 	}
 }
 
