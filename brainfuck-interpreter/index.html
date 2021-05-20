@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>brainfuck interpreter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>brainfuck</h1>
+	<canvas id="cellsCanvas" width="600" height="100"></canvas><br>
+	<textarea id="codeArea" placeholder="Write your code here..." style="width: 600px; height: 300px; font: 30px bold"></textarea><br><br>
+	<button id="runButton">Run</button><br><br>
+	<label>Output:</label><br>
+	<textarea id="outputArea" readonly="true" style="width: 300px; height: 150px"></textarea>
+
+	<p>">" = moves the pointer 1 cell to the right.</p>
+	<p>"<" = moves the pointer 1 cell to the left.</p>
+	<p>"+" = increment cell value by 1.</p>
+	<p>"-" = decrement cell value by 1.</p>
+	<p>"." = prints a ascii character with the value inside the cell.</p>
+	<p>"," = takes a digit input between 1 - 9.</p>
+	<p>"[" = start of a loop (marks the cell).</p>
+	<p>"]" = end of a loop (the loops ends when the marked cell has the value 0).</p>
+
+	<p>for more information about brainfuck check out <a href="https://en.wikipedia.org/wiki/Brainfuck">wikipedia page</a></p>
+
+	<script type="text/javascript" src="js/brainfuck.js"></script>
+</body>
+</html>
