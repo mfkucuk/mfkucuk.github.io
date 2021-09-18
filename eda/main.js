@@ -52,7 +52,7 @@ function update() {
     requestAnimationFrame(update);
     ctx.clearRect(-1000, 0, 50000, CANVAS_HEIGHT);
 
-    for (var i = 0; i < 50000; i += 1200) {
+    for (var i = 0; i < 35000; i += 1200) {
         ctx.drawImage(backgroundImg, i, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 
@@ -129,7 +129,7 @@ function Player() {
     this.playerWidth = 32;
     this.playerHeight = 37;
     this.x = CANVAS_WIDTH / 2;
-    this.y = CANVAS_HEIGHT - this.playerHeight;
+    this.y = CANVAS_HEIGHT - this.playerHeight - 60;
     this.dx = 5;
     this.dy = 0;
     this.gravity = 1;
@@ -157,13 +157,13 @@ function Player() {
     }
 
     this.jump = function() {
-        if (spacePressed && this.y == CANVAS_HEIGHT - this.playerHeight) {
+        if (spacePressed && this.y == CANVAS_HEIGHT - this.playerHeight - 60) {
             this.dy = 15;
             this.dy -= this.gravity;
             this.y -= this.dy;  
             spacePressed = ! spacePressed;
         }
-        if (this.y < CANVAS_HEIGHT - this.playerHeight) {
+        if (this.y < CANVAS_HEIGHT - this.playerHeight - 60) {
             this.dy -= this.gravity;
             this.y -= this.dy;
         }
