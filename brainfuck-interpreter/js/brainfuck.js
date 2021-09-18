@@ -59,7 +59,6 @@ let input = () => {
 };
 
 let startLoop = (index) => {
-	console.log("started")
 	markedCell = pointer;
 	loopStart = index;
 }
@@ -73,12 +72,10 @@ function execute(code) {
 		console.log(i);
 		switch (codeContent[i]) {
 			case commands[0]:
-			console.log("right");
 			right();
 			break;
 
 			case commands[1]:
-			console.log("left");
 			left();
 			break;
 
@@ -104,11 +101,9 @@ function execute(code) {
 
 			case commands[7]:
 			if (cells[markedCell] == 0) {
-				console.log("end");
 				markedCell = -1;
 			}
 			else {
-				console.log("loop");
 				i = loopStart;
 			}
 			break;
