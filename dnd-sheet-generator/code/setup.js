@@ -499,4 +499,9 @@ function fillOutSheet()
 	ctx.beginPath();
 	ctx.arc(390, 920, 15, 0, 2 * Math.PI);
 	ctx.stroke();
+
+	ctx.globalCompositeOperation = 'destination-over'
+	// Now draw!
+	ctx.fillStyle = "#D2B48C";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }	
