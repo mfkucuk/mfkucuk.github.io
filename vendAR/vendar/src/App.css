@@ -42,13 +42,13 @@
 
 .content {
   background-color: #ffffff;
-  
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   height: 70vh;
   overflow-y: auto;
-  
+ /* This will scale (zoom out) the content to 90% */
 }
+
 
 h1, h2, h3, h4 {
   font-weight: bold;

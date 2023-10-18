@@ -96,7 +96,7 @@ const OurTeam = () => {
     {/* Supervisor Card */}
     <div className="col-md-6">
         <h2 className="text-center mb-4">Our Supervisor</h2>
-        <div className="card m-2 mx-auto" style={{ width: '18rem' }}>
+        <div className="card m-2 mx-auto" style={{ width: '12rem' }}>
             {/* Uncomment the line below if you have an image for the supervisor */}
             {/* <img src={supervisor.image_src} className="card-img-top" alt={`${supervisor.name}`} /> */}
             <div className="card-body text-center">
