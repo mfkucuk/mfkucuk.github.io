@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vendAR/vendar/static/css/main.564b3b64.css",
+    "main.js": "/vendAR/vendar/static/js/main.76173a92.js",
+    "static/js/787.c5bef432.chunk.js": "/vendAR/vendar/static/js/787.c5bef432.chunk.js",
+    "index.html": "/vendAR/vendar/index.html",
+    "main.564b3b64.css.map": "/vendAR/vendar/static/css/main.564b3b64.css.map",
+    "main.76173a92.js.map": "/vendAR/vendar/static/js/main.76173a92.js.map",
+    "787.c5bef432.chunk.js.map": "/vendAR/vendar/static/js/787.c5bef432.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.564b3b64.css",
+    "static/js/main.76173a92.js"
+  ]
+}
