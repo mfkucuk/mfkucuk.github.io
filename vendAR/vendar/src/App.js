@@ -64,16 +64,16 @@ const Home = () => {
 
 const OurTeam = () => {
   const teamMembers = [
-      { name: "Ege Ayan", email: "ege.ayan@ug.bilkent.edu.tr", github: "https://github.com/ege-ayan", image_src: "ege.jpg" },
-      { name: "Deniz Çelik", email: "denizc@ug.bilkent.edu.tr", github: "https://github.com/denizcbilkent", image_src: "deniz.jpg"},
-      { name: "Mehmet Feyyaz Küçük", email: "feyyaz.kucuk@ug.bilkent.edu.tr", github: "https://github.com/mfkucuk", image_src: "feyyaz.jpg" },
-      { name: "Ender Utlu", email: "ender.utlu@ug.bilkent.edu.tr", github: "https://github.com/enderutlu", image_src: "ender.jpg"},
-      { name: "Parsa Keihan", email: "parsa.keihan@ug.bilkent.edu.tr", github: "https://github.com/Parsa23k", image_src: "parsa.jpg" },
+      { name: "Ege Ayan", email: "ege.ayan@ug.bilkent.edu.tr", github: "https://github.com/ege-ayan", image_src: "ege.jpg", linkedin: "https://www.linkedin.com/in/ege-ayan/" },
+      { name: "Deniz Çelik", email: "denizc@ug.bilkent.edu.tr", github: "https://github.com/denizcbilkent", image_src: "deniz.jpg", linkedin: "https://www.linkedin.com/in/denizcelik1057/" },
+      { name: "Mehmet Feyyaz Küçük", email: "feyyaz.kucuk@ug.bilkent.edu.tr", github: "https://github.com/mfkucuk", image_src: "feyyaz.jpg", linkedin: "https://www.linkedin.com/in/mehmet-feyyaz-kucuk-9305661b4/"  },
+      { name: "Ender Utlu", email: "ender.utlu@ug.bilkent.edu.tr", github: "https://github.com/enderutlu", image_src: "ender.jpg", linkedin: "https://www.linkedin.com/in/ender-utlu-5aa67a1b4/" },
+      { name: "Parsa Keihan", email: "parsa.keihan@ug.bilkent.edu.tr", github: "https://github.com/Parsa23k", image_src: "parsa.jpg", linkedin: "https://www.linkedin.com/in/parsakeihan/"  },
       
   ];
 
-  const supervisor = { name: "Uğur Güdükbay", email: "supervisor@email.com", github: "https://github.com/supervisor" };
-  const innovationExpert = { name: "Cem Çimenbiçer", email: "innovationExpert@email.com", github: "https://github.com/innovationExpert" };
+  const supervisor = { name: "Uğur Güdükbay", email: "supervisor@email.com", linkedin: "https://www.linkedin.com/in/ugur-gudukbay-7846701a/" };
+  const innovationExpert = { name: "Cem Çimenbiçer", email: "innovationExpert@email.com", linkedin: "https://www.linkedin.com/in/daegoth/" };
 
   return (
     <div className="container mt-5">
@@ -87,6 +87,7 @@ const OurTeam = () => {
                     <h5 className="card-title">{member.name}</h5>
                     <p className="card-text">{member.email}</p>
                     <a href={member.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub</a>
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary">LinkedIn</a>
                 </div>
             </div>
         ))}
@@ -101,9 +102,7 @@ const OurTeam = () => {
             {/* <img src={supervisor.image_src} className="card-img-top" alt={`${supervisor.name}`} /> */}
             <div className="card-body text-center">
                 <h5 className="card-title">{supervisor.name}</h5>
-                
-                {/* Uncomment the line below if you have a GitHub link for the supervisor */}
-                {/* <a href={supervisor.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub</a> */}
+                <a href={supervisor.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary">LinkedIn</a>
             </div>
         </div>
     </div>
@@ -116,9 +115,8 @@ const OurTeam = () => {
             {/* <img src={innovationExpert.image_src} className="card-img-top" alt={`${innovationExpert.name}`} /> */}
             <div className="card-body text-center">
                 <h5 className="card-title">{innovationExpert.name}</h5>
-                
-                {/* Uncomment the line below if you have a GitHub link for the innovation expert */}
-                {/* <a href={innovationExpert.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub</a> */}
+                <a href={innovationExpert.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary">LinkedIn</a>
+
             </div>
         </div>
     </div>
