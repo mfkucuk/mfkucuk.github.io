@@ -81,13 +81,14 @@ const OurTeam = () => {
 
     <div className="d-flex justify-content-center mb-5">
         {teamMembers.map(member => (
-            <div className="card m-2" style={{ width: '18rem' }}>
+            <div className="card m-2" style={{ width: '25rem'}}>
                 <img src = {member.image_src} className="card-img-top" alt={`${member.name}`} />
                 <div className="card-body">
                     <h5 className="card-title">{member.name}</h5>
-                    <p className="card-text">{member.email}</p>
+                    <p className="card-text" style={{fontSize:"14px"}}>{member.email}</p>
                     <a href={member.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">GitHub</a>
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary">LinkedIn</a>
+                    <br></br>
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{marginTop: "1vh"}}>LinkedIn</a>
                 </div>
             </div>
         ))}
@@ -97,7 +98,7 @@ const OurTeam = () => {
     {/* Supervisor Card */}
     <div className="col-md-6">
         <h2 className="text-center mb-4">Our Supervisor</h2>
-        <div className="card m-2 mx-auto" style={{ width: '12rem' }}>
+        <div className="card m-2 mx-auto" style={{ width: '18rem' }}>
             {/* Uncomment the line below if you have an image for the supervisor */}
             {/* <img src={supervisor.image_src} className="card-img-top" alt={`${supervisor.name}`} /> */}
             <div className="card-body text-center">
