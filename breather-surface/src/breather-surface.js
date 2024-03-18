@@ -250,7 +250,7 @@ window.onload = function init() {
    });
 
    document.getElementById('phongButton').addEventListener('click', () => {
-      program = initShadersFromFiles(gl, 'breather-surface/src/phong.glsl');
+      program = initShadersFromFiles(gl, '/breather-surface/src/phong.glsl');
 
       document.getElementById('currentShader').innerText = 'Phong';
 
