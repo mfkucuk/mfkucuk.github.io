@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute  vec4 vPosition;
+attribute  vec3 vNormal;
+varying vec4 fColor;
+
+uniform vec4 ambientProduct, diffuseProduct, specularProduct;
+uniform mat4 modelViewMatrix;
+uniform mat4 projectionMatrix;
+uniform vec4 lightPosition;
+uniform float shininess;
+void main()
+{
+    vec3 pos = -(modelViewMatrix * vPosition).xyz;
+    
+    //fixed light postion
+    
+    vec3 light = lightPosition.xyz;
+    vec3 L = normalize( light - pos );
+
+	
+    vec3 E = normalize( -pos );
+    vec3 H = normalize( L + E );
+    
+    vec4 NN = vec4(vNormal,0);
+
+    // Transform vertex normal into eye coordinates
+       
+    vec3 N = normalize( (modelViewMatrix*NN).xyz);
+
+    // Compute terms in the illumination equation
+    vec4 ambient = ambientProduct;
+
+    float Kd = max( dot(L, N), 0.0 );
+    vec4  diffuse = Kd*diffuseProduct;
+
+    float Ks = pow( max(dot(N, H), 0.0), shininess );
+    vec4  specular = Ks * specularProduct;
+    
+    if( dot(L, N) < 0.0 ) {
+	specular = vec4(0.0, 0.0, 0.0, 1.0);
+    } 
+
+    gl_Position = projectionMatrix * modelViewMatrix * vPosition;
+    fColor = ambient + diffuse +specular;
+    
+    fColor.a = 1.0;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+
+varying vec4 fColor;
+
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="Common/webgl-utils.js"></script>
+<script type="text/javascript" src="Common/initShaders2.js"></script>
+<script type="text/javascript" src="Common/MV.js"></script>
+<script type="text/javascript" src="src/breather-surface.js"></script>
+
+<body>
+    <div style="display: flex; flex-direction: row;">
+        <div>
+            <canvas id="gl-canvas" width="512" height="512">
+            Oops ... your browser doesn't support the HTML5 canvas element
+            </canvas>
+        </div>
+        <div style="align-items: center;">
+            <div>
+                <label for="slider">&nbsp;Aa:  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0</label>
+                <input type="range" id="aaSlider" name="slider" step="0.01" min="0" max="1" value="0.5">
+                <label>1</label>
+            </div>
+            <br>
+            <div>
+                <label for="slider">&nbsp;U-range: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;10</label>
+                <input type="range" id="uRangeSlider" name="slider" min="10" max="100" value="34">
+                <label>100  &nbsp;&nbsp;</label>
+            </div>
+            <br>
+            <div>
+                <label for="slider">&nbsp;U-precision: &nbsp;&nbsp;&nbsp;&nbsp;0</label>
+                <input type="range" id="uPrecisionSlider" name="slider" step="0.01" min="0.1" max="1" value="0.2">
+                <label>1&nbsp;</label>
+            </div>
+            <br>
+            <div>
+                <label for="slider">&nbsp;V-range: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;10</label>
+                <input type="range" id="vRangeSlider" name="slider" min="10" max="100" value="17">
+                <label>100  &nbsp;&nbsp;</label>
+            </div>
+            <br>
+            <div>
+                <label for="slider">&nbsp;V-precision: &nbsp;&nbsp;&nbsp;&nbsp;0</label>
+                <input type="range" id="vPrecisionSlider" name="slider" step="0.01" min="0.1" max="1" value="0.2">
+                <label>1&nbsp;</label>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button id="wireframeButton">Wireframe</button>
+        <button id="gouraudButton">Gouraud</button>
+        <button id="phongButton">Phong</button>
+
+        <br/><br/>
+        <b>Current Shader</b><p id="currentShader">Gouraud</p>
+
+        <input id="useTexture" type="checkbox"> Use Texture
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="pngFile">Select a PNG file:</label>
+            <input type="file" id="imageInput" accept="image/png, image/jpeg">
+        </form>
+    </div>
+</body>
+</html>
