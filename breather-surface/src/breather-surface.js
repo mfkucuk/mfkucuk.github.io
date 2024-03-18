@@ -95,7 +95,7 @@ window.onload = function init() {
    //
    //  Load shaders and initialize attribute buffers
    //
-   program = initShadersFromFiles( gl, '/src/gouraud.glsl'); 
+   program = initShadersFromFiles( gl, '/breather-surface/src/gouraud.glsl'); 
    gl.useProgram( program );
 
    drawBreather();
@@ -202,7 +202,7 @@ window.onload = function init() {
    });
 
    document.getElementById('wireframeButton').addEventListener('click', () => {
-      program = initShadersFromFiles(gl, '/src/wireframe.glsl');
+      program = initShadersFromFiles(gl, '/breather-surface/src/wireframe.glsl');
 
       document.getElementById('useTexture').checked = false;
       document.getElementById('useTexture').disabled = true;
@@ -221,7 +221,7 @@ window.onload = function init() {
    });
 
    document.getElementById('gouraudButton').addEventListener('click', () => {
-      program = initShadersFromFiles(gl, '/src/gouraud.glsl');
+      program = initShadersFromFiles(gl, '/breather-surface/src/gouraud.glsl');
 
       document.getElementById('useTexture').disabled = false;
 
