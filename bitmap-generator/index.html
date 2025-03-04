@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitmap Generator</title>
+  <style>
+    body { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      height: 100vh; 
+      margin: 0; 
+      background: #121212; 
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #grid { 
+      display: grid; 
+      border: 1px solid white; 
+      gap: 1px; /* Ensures there is spacing between the pixels */
+    }
+    .pixel { 
+      width: 20px; 
+      height: 20px; 
+      background: black; 
+      border: 1px solid #333; 
+      box-sizing: border-box; /* Ensures border is included in the size */
+    }
+    .white { background: white; }
+    input, button, textarea {
+      background: #333;
+      color: white;
+      border: 1px solid #444;
+      padding: 5px;
+      margin: 5px;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+    textarea {
+      background: #222;
+      border: 1px solid #444;
+    }
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Bitmap Generator</h1>
+
+<div>
+  Width: <input type="number" id="width" value="16" min="1"> 
+  Height: <input type="number" id="height" value="26" min="1">
+  <button onclick="createGrid()">Create Grid</button>
+  <button onclick="copyBitmap()">Copy Bitmap</button>
+</div>
+
+<div id="grid"></div>
+
+<textarea id="bitmapOutput" readonly rows="10" cols="50"></textarea>
+
+<p><b>IMPORTANT NOTE: </b>I couldn't find anything like this on the internet, so I created one myself. You can use this tool to paint bitmaps for your OLED displays.
+I am using the bitmaps with the Adafruit_SSD1306 library, but the bitmap should apply everywhere. ENJOY!</p>
+
+<script>
+let isDrawing = false;
+let isErasing = false;
+
+function createGrid() {
+  const grid = document.getElementById("grid");
+  const width = parseInt(document.getElementById("width").value);
+  const height = parseInt(document.getElementById("height").value);
+  grid.innerHTML = "";
+  grid.style.gridTemplateColumns = `repeat(${width}, 20px)`;
+  grid.style.gridTemplateRows = `repeat(${height}, 20px)`;
+
+  for (let i = 0; i < width * height; i++) {
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+    pixel.addEventListener("mousedown", (e) => {
+      isDrawing = e.button === 0; // Left Click
+      isErasing = e.button === 2; // Right Click
+      togglePixel(pixel);
+    });
+    pixel.addEventListener("mouseenter", () => {
+      if (isDrawing) pixel.classList.add("white");
+      if (isErasing) pixel.classList.remove("white");
+    });
+    pixel.addEventListener("contextmenu", (e) => e.preventDefault());
+    grid.appendChild(pixel);
+  }
+
+  document.addEventListener("mouseup", () => {
+    isDrawing = false;
+    isErasing = false;
+  });
+}
+
+function togglePixel(pixel) {
+  if (isDrawing) pixel.classList.add("white");
+  if (isErasing) pixel.classList.remove("white");
+}
+
+function copyBitmap() {
+  const pixels = document.querySelectorAll(".pixel");
+  const width = parseInt(document.getElementById("width").value);
+  let bitmap = [];
+
+  for (let i = 0; i < pixels.length; i += 8) {
+    let byte = 0;
+    for (let j = 0; j < 8 && i + j < pixels.length; j++) {
+      if (pixels[i + j].classList.contains("white")) {
+        byte |= (1 << (7 - j));
+      }
+    }
+    bitmap.push(`0x${byte.toString(16).padStart(2, '0')}`);
+  }
+
+  document.getElementById("bitmapOutput").value = bitmap.join(", ");
+  navigator.clipboard.writeText(bitmap.join(", "));
+  alert("Bitmap copied to clipboard!");
+}
+
+createGrid();
+</script>
+</body>
+</html>
